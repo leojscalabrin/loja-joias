@@ -1,0 +1,95 @@
+@import "variables.scss";
+@import 'mixin.scss';
+
+
+.top-swiper{
+    @include flex();
+    width: 100%;
+    height: calculadora-rem(30);
+    background-color: $darkPurple;
+}
+
+.top-text{
+    font-family: $firstFont;
+    font-size: calculadora-rem(12);
+    margin-right: calculadora-rem(12.67);
+    margin-left: calculadora-rem(12.67);
+    color: #FFFFFF;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.arrow{
+    width: calculadora-rem(8.33);
+    height: calculadora-rem(10.83);
+}
+
+.logo{
+    @include flex();
+    font-size: calculadora-rem(48);
+    width: calculadora-rem(238);
+    height: calculadora-rem(36);
+}
+
+.main-menu{
+    width: 100%;
+    @include flex(space-evenly, center);
+    color: #FFFFFF;
+    font-family: $secondFont;
+    background-color: $purple;
+    text-transform: uppercase;
+    height: calculadora-rem(79);
+    padding: 20px 100px;
+}
+
+.menu{
+    @include flex();
+}
+
+.menu-item{
+    margin-right: calculadora-rem(31);
+}
+
+.main-banner {
+    width: 100%;
+}
+
+.container{
+    width: 100%;
+    background: $grey;
+    position: relative;
+
+    @include flex();
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,10 @@
+@mixin flex($justify-content: center, $align-items: center){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@function calculadora-rem($font-size) {
+    $tamanho: $font-size/16;
+    @return $tamanho + rem;
+}
