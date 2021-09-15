@@ -1,7 +1,6 @@
 @import "variables.scss";
 @import 'mixin.scss';
 
-
 .top-swiper{
     @include flex();
     width: 100%;
@@ -33,7 +32,7 @@
 
 .main-menu{
     width: 100%;
-    @include flex(space-evenly, center);
+    @include flex(space-between);
     color: #FFFFFF;
     font-family: $secondFont;
     background-color: $purple;
@@ -42,13 +41,10 @@
     padding: 20px 100px;
 }
 
-.menu{
-    @include flex();
+.header-menu{
+    @include flex(space-between);
 }
 
-.menu-item{
-    margin-right: calculadora-rem(31);
-}
 
 .main-banner {
     width: 100%;
@@ -72,7 +68,6 @@
     font-size: 18px;
     background: #fff;
 
-    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
