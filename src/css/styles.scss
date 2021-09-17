@@ -1,14 +1,20 @@
 @import "variables.scss";
 @import 'mixin.scss';
 
-.top-swiper{
+.page-container{
+    margin: auto;
+    max-width: calculadora-rem(1440);
+    overflow-x: hidden;
+}
+
+.top-text{
     @include flex();
     width: 100%;
     height: calculadora-rem(30);
     background-color: $darkPurple;
 }
 
-.top-text{
+.top-text-content{
     font-family: $firstFont;
     font-size: calculadora-rem(12);
     margin-right: calculadora-rem(12.67);
@@ -28,23 +34,39 @@
     font-size: calculadora-rem(48);
     width: calculadora-rem(238);
     height: calculadora-rem(36);
+    line-height: 36px;
 }
 
 .main-menu{
     width: 100%;
-    @include flex(space-between);
+    @include flex();
     color: #FFFFFF;
     font-family: $secondFont;
     background-color: $purple;
     text-transform: uppercase;
     height: calculadora-rem(79);
-    padding: 20px 100px;
+    padding: 20px 0;
 }
 
 .header-menu{
     @include flex(space-between);
 }
 
+.header-menu--wrapper{
+    color: #FFFFFF;
+    font-family: $firstFont;
+    font-weight: 700;
+    font-size: calculadora-rem(14);
+    text-transform: uppercase;
+}
+
+.header-menu--wrapper--items{
+    display: none;
+}
+
+.header-menu--sub-item{
+    display: none;
+}
 
 .main-banner {
     width: 100%;

@@ -5,7 +5,7 @@ const renderMenuDesktop = (menu) => {
   menu.map((department) => {
     if(department.children === undefined){
       structureMenu += `
-        <div class="header-menu-wrapper">
+        <div class="header-menu--wrapper">
           <a href=${department.url}> ${department.name} </a>
         </div>
       `;
@@ -27,7 +27,7 @@ const renderMenuDesktop = (menu) => {
                       })}
                     </div>
                   </div>
-                  `
+                  `;
                 }
               })}
             </div>

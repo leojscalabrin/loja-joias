@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Ovo&display=swap");
-.top-swiper {
+.page-container {
+  margin: auto;
+  max-width: 90rem;
+  overflow-x: hidden;
+}
+
+.top-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,7 +20,7 @@
   background-color: #614B65;
 }
 
-.top-text {
+.top-text-content {
   font-family: "Open Sans", sans-serif;
   font-size: 0.75rem;
   margin-right: 0.79187rem;
@@ -42,28 +48,11 @@
   font-size: 3rem;
   width: 14.875rem;
   height: 2.25rem;
+  line-height: 36px;
 }
 
 .main-menu {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #FFFFFF;
-  font-family: "Ovo", serif;
-  background-color: #9A7AA0;
-  text-transform: uppercase;
-  height: 4.9375rem;
-  padding: 20px 100px;
-}
-
-.menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,10 +62,40 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #FFFFFF;
+  font-family: "Ovo", serif;
+  background-color: #9A7AA0;
+  text-transform: uppercase;
+  height: 4.9375rem;
+  padding: 20px 0;
 }
 
-.menu-item {
-  margin-right: 1.9375rem;
+.header-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-menu--wrapper {
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.header-menu--wrapper--items {
+  display: none;
+}
+
+.header-menu--sub-item {
+  display: none;
 }
 
 .main-banner {
@@ -107,7 +126,6 @@
   text-align: center;
   font-size: 18px;
   background: #fff;
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
