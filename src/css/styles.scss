@@ -19,7 +19,7 @@
     font-size: calculadora-rem(12);
     margin-right: calculadora-rem(12.67);
     margin-left: calculadora-rem(12.67);
-    color: #FFFFFF;
+    color: $white;
     font-weight: 300;
     text-transform: uppercase;
 }
@@ -40,7 +40,7 @@
 .main-menu{
     width: 100%;
     @include flex();
-    color: #FFFFFF;
+    color: $white;
     font-family: $secondFont;
     background-color: $purple;
     text-transform: uppercase;
@@ -48,23 +48,24 @@
     padding: 20px 0;
 }
 
-.header-menu{
+.menu{
     @include flex(space-between);
+    color: $white;
 }
 
-.header-menu--wrapper{
-    color: #FFFFFF;
+.menu--wrapper{
+    color: $white;
     font-family: $firstFont;
     font-weight: 700;
     font-size: calculadora-rem(14);
     text-transform: uppercase;
 }
 
-.header-menu--wrapper--items{
+.menu--wrapper--items{
     display: none;
 }
 
-.header-menu--sub-item{
+.menu--sub-item{
     display: none;
 }
 
@@ -110,3 +111,60 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+.footer {
+    background: $purple;
+}
+
+.footer__container{
+    @include container-center();
+    @include flex(space-between, flex-start);
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+}
+
+.footer__links {
+    
+  }
+  
+  .footer__links-title {
+    font-size: calculadora-rem(16);
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+
+    @media (max-width: 1024px){
+        font-size: 30px;
+        padding: 10px 0;
+        margin: 10px 0;
+    }
+  }
+  
+  .footer__links-link {
+    text-decoration: none;
+    font-size: calculadora-rem(14);
+    color: $white;
+    font-family: "Open Sans", sans-serif;
+    padding: 10px 0;
+  
+    display: inline-block;
+    transition-duration: 300ms;
+  
+    &:hover {
+      color: darken($white, 30%);
+    }
+  }
+  
+  .footer__links-list {
+    @media (max-width: 1024px) {
+        display: none;
+
+        &.show-item{
+           display: flex; 
+        }
+    }
+  }

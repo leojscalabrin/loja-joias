@@ -1,27 +1,27 @@
 const renderMenuDesktop = (menu) => {
   let structureMenu = ''
-  const $containerMenu = document.querySelector(".header-menu")
+  const $containerMenu = document.querySelector(".menu")
 
   menu.map((department) => {
     if(department.children === undefined){
       structureMenu += `
-        <div class="header-menu--wrapper">
+        <div class="menu--wrapper">
           <a href=${department.url}> ${department.name} </a>
         </div>
       `;
     } else {
       structureMenu += `
-        <div class="header-menu--wrapper">
+        <div class="menu--wrapper">
           <a href=${department.url}> ${department.name} </a>
-            <div class="header-menu--items">
+            <div class="menu--items">
               ${department.children.map((category) => {
                 if(category.children === undefined) {
                   return `<a href=${category.url}>${category.name}</a>`
                 } else {
                   return `
-                  <div class="header-menu--wrapper-items">
+                  <div class="menu--wrapper-items">
                     <a href=${category.url}>${category.name}</a>
-                    <div class="header-menu--sub-item">
+                    <div class="menu--sub-item">
                       ${category.children.map((subcategory) => {
                         return `<a href=${category.url}>${category.name}</a>`
                       })}
@@ -34,10 +34,10 @@ const renderMenuDesktop = (menu) => {
         </div>
       `;
     }
-  });
+  })
 
   $containerMenu.innerHTML = structureMenu
-};
+}
 
 const requestMenuDesktop = () => {
   const menu = [];
@@ -46,10 +46,29 @@ const requestMenuDesktop = () => {
     .then((response) => response.json())
     .then((json) => {
       renderMenuDesktop(json.menu)
-    });
-};
+    })
+}
 
-requestMenuDesktop();
+const renderMenuFooter = (menu) => {
+  let structureMenu = "";
+  const $containerMenu = document.querySelector('.footer__links-list.menu')
+
+  menu.map((department) => {
+    structureMenu += `<li class="footer__links-list-item">
+                        <a href="${department.url}" class="footer__links-link">${department.name}</a>
+                      </li>`
+  })
+
+  $containerMenu.innerHTML = structureMenu
+}
+
+const requestShelfs= () => {
+  fetch("./src/script/shelf/shelf.json")
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+    })
+}
 
 const bannerSwipper = () => {
     new Swiper(".container", {
@@ -57,7 +76,28 @@ const bannerSwipper = () => {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-      });
+      })
 }
 
+const toggleFooter = () => {
+  const titles = document.querySelectorAll('.footer__links-title')
+  const listLinks = document.querySelectorAll('.footer__links-list')
+
+  $titles.forEach((title, index) => {
+    title.addEventListener('click', () => {
+      title.classList.toggle('show-item');
+      listLinks[index].classList.toggle("show-item");
+    })
+  })
+}
+
+requestMenuDesktop();
+requestShelfs();
+toggleFooter();
 bannerSwipper();
+
+const verifyMobile = document.body.clientWidth;
+
+if (verifyMobile <= 1024) {
+  toggleFooter();
+}
