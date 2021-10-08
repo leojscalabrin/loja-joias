@@ -1,27 +1,27 @@
 const renderMenuDesktop = (menu) => {
   let structureMenu = ''
-  const $containerMenu = document.querySelector(".menu")
+  const $containerMenu = document.querySelector(".main-menu__menu")
 
   menu.map((department) => {
     if(department.children === undefined){
       structureMenu += `
-        <div class="menu--wrapper">
+        <div class="main-menu__menu--wrapper">
           <a href=${department.url}> ${department.name} </a>
         </div>
       `;
     } else {
       structureMenu += `
-        <div class="menu--wrapper">
+        <div class="main-menu__menu--wrapper">
           <a href=${department.url}> ${department.name} </a>
-            <div class="menu--items">
+            <div class="main-menu__menu--items">
               ${department.children.map((category) => {
                 if(category.children === undefined) {
                   return `<a href=${category.url}>${category.name}</a>`
                 } else {
                   return `
-                  <div class="menu--wrapper-items">
+                  <div class="main-menu__menu--wrapper-items">
                     <a href=${category.url}>${category.name}</a>
-                    <div class="menu--sub-item">
+                    <div class="main-menu__menu--sub-item">
                       ${category.children.map((subcategory) => {
                         return `<a href=${category.url}>${category.name}</a>`
                       })}

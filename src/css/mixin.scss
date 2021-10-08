@@ -8,3 +8,12 @@
     $tamanho: $font-size/16;
     @return $tamanho + rem;
 }
+
+@mixin container-center($max-width: 1220px, $margin: 0 auto) {
+	max-width: $max-width;
+	margin: $margin;
+
+	@media screen and(max-width: 1366px) {
+		margin: 0 5%;
+	}
+}
