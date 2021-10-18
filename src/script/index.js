@@ -6,24 +6,24 @@ const renderMenuDesktop = (menu) => {
     if(department.children === undefined){
       structureMenu += `
         <div class="main-menu__menu--wrapper">
-          <a href=${department.url}> ${department.name} </a>
+          <a href=${department.url} class="main-menu__menu-department"> ${department.name} </a>
         </div>
       `;
     } else {
       structureMenu += `
         <div class="main-menu__menu--wrapper">
-          <a href=${department.url}> ${department.name} </a>
+          <a href=${department.url} class="main-menu__menu-department"> ${department.name} </a>
             <div class="main-menu__menu--items">
               ${department.children.map((category) => {
                 if(category.children === undefined) {
-                  return `<a href=${category.url}>${category.name}</a>`
+                  return `<a href=${category.url} class="main-menu__menu-category">${category.name}</a>`
                 } else {
                   return `
-                  <div class="main-menu__menu--wrapper-items">
-                    <a href=${category.url}>${category.name}</a>
+                  <div class="main-menu__menu-wrapper-items">
+                    <a href=${category.url} class="main-menu__menu-category">${category.name}</a>
                     <div class="main-menu__menu--sub-item">
                       ${category.children.map((subcategory) => {
-                        return `<a href=${category.url}>${category.name}</a>`
+                        return `<a href=${category.url} class="main-menu__menu-category">${category.name}</a>`
                       })}
                     </div>
                   </div>
